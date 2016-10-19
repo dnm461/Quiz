@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Election Trivia</title>
+<style>
+body {
+background-color: #ff9999;
+font-family: Helvetica;
+}
+
+#main {
+width: 66%;
+max-width: 950px;
+border: 3px gray solid;
+margin: auto;
+padding: 10px;
+background-color: #99ccff;
+border-radius: 20px;
+font-family: avenir; 
+overflow: auto;
+}
+
+#header {
+margin-top: 0;
+border: 2px solid black;
+padding: 0px;
+max-width: 100%;
+height: 250px;
+color: white;
+background-image: url('america3.png');
+background-size: 100%;
+
+}
+
+
+#footer {
+font-family: georgia; 
+color: #FFFFFF;
+
+}
+
+#footer p{
+font-size:30px;
+}
+
+
+</style>
+</head>
+<body>
+<div id="main">
+<div id="header"></div>
+<table>
+<form  id="form1" >
+
+
+<p>The 2016 Presidential election is electing the ________.</p>
+<input type="radio" name="ele" id="four" value="0" />44th President of the United States of America</br>
+<input type="radio" name="ele" id="five" value="10" />45th President of the United States of America</br>
+<input type="radio" name="ele" id="eight" value="0" />48th President of the United States of America</br>
+<input type="radio" name="ele" id="fifty" value="0" />50th President of the United States of America</br>
+
+<p>Who is the Democratic party's Presidential nominee?</p>
+<input type="radio" name="dem" id="don" value="0" />Donald Trump </br>
+<input type="radio" name="dem" id="tim" value="0" />Tim Kaine </br>
+<input type="radio" name="dem" id="hil" value="10" />Hillary Clinton </br>
+<input type="radio" name="dem" id="gar" value="0" />Gary Johnson </br>
+
+<p>Who is the Republican party's Presidential nominee?</p>
+<input type="radio" name="rep" id="mik" value="0" />Mike Pence</br>
+<input type="radio" name="rep" id="cli" value="0" />Hillary Clinton</br>
+<input type="radio" name="rep" id="tru" value="10" />Donald Trump </br>
+<input type="radio" name="rep" id="ted" value="0" />Ted Cruz </br>
+
+<p>Who is the Libertarian party's Presidential nominee?</p>
+<input type="radio" name="lib" id="wil" value="0" />William Weld</br>
+<input type="radio" name="lib" id="dtr" value="0" />Donald Trump</br>
+<input type="radio" name="lib" id="chr" value="0" />Chris Christie</br>
+<input type="radio" name="lib" id="joh" value="10" />Gary Johnson</br>
+
+<p>Who is the Independent party's Presidential nominee?</p>
+<input type="radio" name="ind" id="jill" value="0" />Jill Stein</br>
+<input type="radio" name="ind" id="evan" value="10" />Evan McMullin</br>
+<input type="radio" name="ind" id="dar" value="0" />Darrell Castle</br>
+<input type="radio" name="ind" id="Aja" value="0" />Ajamu Baraka</br>
+
+
+<p>When is the 2016 Presidential Election?</p>
+<input type="radio" name="date" id="tue" value="10" />Tuesday - November 8, 2016</br>
+<input type="radio" name="date" id="wed" value="0" />Wednesday - November 9, 2016</br>
+<input type="radio" name="date" id="fri" value="0" />Friday - January 20, 2017</br>
+<input type="radio" name="date" id="tues" value="0" />Tuesday - November 15, 2016</br>
+
+<p>When is Inauguration Day?</p>
+<input type="radio" name="ina" id="mon" value="0" />Monday - January 16, 2017</br>
+<input type="radio" name="ina" id="fri" value="10" />Friday - January 20, 2017</br>
+<input type="radio" name="ina" id="frid" value="0" />Friday - November 11, 2016</br>
+<input type="radio" name="ina" id="sun" value="0" />Sunday - January 1, 2017</br>
+
+<p>How long is a presidential term?</p>
+<input type="radio" name="term" id="two" value="0" />2 years</br>
+<input type="radio" name="term" id="three" value="0" />3 years</br>
+<input type="radio" name="term" id="four" value="10" />4 years</br>
+<input type="radio" name="term" id="five" value="0" />5 years</br>
+
+<p>How many electoral votes are needed to win?</p>
+<input type="radio" name="vote" id="hund" value="0" />200 Electoral votes</br>
+<input type="radio" name="vote" id="five" value="0" />538 Electoral votes</br>
+<input type="radio" name="vote" id="sixty" value="0" />269 Electoral votes</br>
+<input type="radio" name="vote" id="seventy" value="10" />270 Electoral votes</br>
+
+<p>Which answer has the correct Vice Presidential running mate?</p>
+<input type="radio" name="vice" id="garwil" value="10" />Gary Johnson & William Weld</br>
+<input type="radio" name="vice" id="dontim" value="0" />Donald Trump & Tim Kaine</br>
+<input type="radio" name="vice" id="hilmik" value="0" />Hillary Clinton & Mike Pence</br>
+<input type="radio" name="vice" id="jilscot" value="0" />Jill Stein & Scott Bradley</br>
+
+
+<br />
+<input type="submit" value="Submit">
+
+<br />
+
+<center>
+
+<div id="footer"><p>YOU SCORED: <span id="grade">__</span></p>
+<p id="grade2"></p></div>
+
+</center>
+
+
+</form>
+</table>
+<p id="grade"></p>
+<p id="grade2"></p>
+</div>
+<script>
+ 
+    
+	   document.getElementById("form1").onsubmit=function() {
+	   
+	   
+	  ele = parseInt(document.querySelector('input[name = "ele"]:checked').value);
+	   
+	  dem = parseInt(document.querySelector('input[name = "dem"]:checked').value);
+	   
+	  rep = parseInt(document.querySelector('input[name = "rep"]:checked').value);
+	  
+	  lib = parseInt(document.querySelector('input[name = "lib"]:checked').value);
+	  
+	  ind = parseInt(document.querySelector('input[name = "ind"]:checked').value);
+	  
+	  date = parseInt(document.querySelector('input[name = "date"]:checked').value);
+	  
+	  ina = parseInt(document.querySelector('input[name = "ina"]:checked').value);
+	  
+	  term = parseInt(document.querySelector('input[name = "term"]:checked').value);
+	  
+	  vote = parseInt(document.querySelector('input[name = "vote"]:checked').value);
+	  
+	  vice = parseInt(document.querySelector('input[name = "vice"]:checked').value);
+	   
+	   result= ele + dem + rep + lib + ind + date + ina + term + vote + vice;
+	   
+	  
+	   document.getElementById("grade").innerHTML = result;
+	   
+	
+
+	   if (result == 0) {result2 = "Are you from outer space? <br /><img src='0.jpeg' width='400' />"};
+    if (result == 10) {result2 = "Were you born yesterday? <br /><img src='10.png' width='400' />"};
+    if (result == 20) {result2 = "I know you can do better. <br /><img src='20.jpeg' width='400' />"};
+    if (result == 30) {result2 = "Well you've heard some gossip. <br /><img src='30.jpeg' width='400' />"};
+    if (result == 40) {result2 = "Come on!<br /><img src='40.jpeg' width='400' />"};
+    if (result == 50) {result2 = "Well our country isn't completely hopeless.<br /><img src='50.jpeg' width='400' />"};
+	 if (result == 60) {result2 = "Yay! You know more stuff than not. <br /><img src='60.jpeg' width='400' />"};
+	  if (result == 70) {result2 = "You're so close! <br /><img src='70.jpeg' width='400' />"};
+	   if (result == 80) {result2 = "I know.. There is so much to know, but you are quite educated about the 2016 Presidential election. There is still more for you to know, though. <br /><img src='80.jpeg' width='400' />"};
+	    if (result == 90) {result2 = "Disregard your political affiliation, go out & vote! <br /><img src='90.jpeg' width='400' />"};
+	     if (result == 100) {result2 = "Wow! You are practically a politician! <br /><img src='100.jpeg' width='400' />"};
+		   
+		      document.getElementById("grade2").innerHTML = result2;
+		   
+		
+	   return false; // required to not refresh the page; just leave this here
+	   }// end the submit function
+	
+
+</script>
+
+
+
+</body>
+</html>
